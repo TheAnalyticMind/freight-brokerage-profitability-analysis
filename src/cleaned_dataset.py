@@ -8,7 +8,7 @@ path = Path(__file__).resolve().parent
 
 
 # Read the raw Excel file into a DataFrame
-df = pd.read_excel(path / 'Sales_Assessment_Data.xlsx')
+df = pd.read_excel(path / 'input' / 'Sales_Assessment_Data.xlsx')
 print(f"Raw dataset loaded: {df.shape[0]:,} rows, {df.shape[1]} columns")
 
 # ============================================================
@@ -354,7 +354,7 @@ df.reset_index(drop=True, inplace=True)
 # ============================================================
 # STEP FINAL: SAVE CLEANED DATASET
 # ============================================================
-output_path = 'Freight_Cleaned_Dataset.xlsx'
+output_path = path / 'output' / 'Freight_Cleaned_Dataset.xlsx'
 df.to_excel(output_path, index=False)
 
 print(f"\n{'='*60}")
